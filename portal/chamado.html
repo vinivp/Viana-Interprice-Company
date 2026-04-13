@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte Direto CEO | V.I. Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+    </script>
+</head>
+<body class="bg-viLight font-sans">
+
+    <header class="bg-white shadow-sm py-6">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <img class="h-10" src="../assets/img/logo-texto.png" alt="V.I. Company">
+            <a href="home.html" class="text-sm text-viBlue font-bold hover:text-viGold transition">← Voltar ao Painel</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-16">
+        
+        <div class="bg-viBlue p-8 rounded-t-2xl text-white relative overflow-hidden">
+            <div class="absolute right-0 top-0 p-4 opacity-10">
+                <img src="../assets/img/logo-simbolo.png" class="h-32">
+            </div>
+            <div class="relative z-10">
+                <span class="bg-viGold text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">Canal de Alta Prioridade</span>
+                <h1 class="text-3xl font-bold mt-4">Linha Direta com a Diretoria</h1>
+                <p class="text-gray-300 mt-2">Sua solicitação será enviada diretamente ao CEO da Viana Interprice.</p>
+            </div>
+        </div>
+
+        <div id="chamado-container" class="bg-white p-10 rounded-b-2xl shadow-2xl border-x border-b border-gray-100 transition-all duration-500">
+            
+            <form id="chamado-form" class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-viBlue font-bold mb-2">Setor Crítico</label>
+                        <select class="w-full px-4 py-3 border-2 border-gray-100 rounded-lg focus:border-viGold outline-none bg-white transition">
+                            <option>Marketing / Branding</option>
+                            <option>RH / Escalas de Trabalho</option>
+                            <option>Jurídico / Compliance</option>
+                            <option>Financeiro / Estratégico</option>
+                            <option>Outros Assuntos Urgentes</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-viBlue font-bold mb-2">Grau de Urgência</label>
+                        <select id="urgencia-select" class="w-full px-4 py-3 border-2 border-gray-100 rounded-lg focus:border-viGold outline-none bg-white transition">
+                            <option>Baixa - Apenas Informativo</option>
+                            <option>Média - Requer Reunião</option>
+                            <option value="ALTA" class="text-red-600 font-bold">ALTA - Decisão Imediata</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-viBlue font-bold mb-2">Título do Chamado</label>
+                    <input type="text" required class="w-full px-4 py-3 border-2 border-gray-100 rounded-lg focus:border-viGold outline-none transition" placeholder="Ex: Mudança estratégica na campanha de Natal">
+                </div>
+
+                <div>
+                    <label class="block text-viBlue font-bold mb-2">Detalhes da Solicitação</label>
+                    <textarea required class="w-full px-4 py-3 border-2 border-gray-100 rounded-lg focus:border-viGold outline-none transition" rows="6" placeholder="Descreva aqui sua necessidade..."></textarea>
+                </div>
+
+                <div class="flex items-center justify-between pt-4">
+                    <p class="text-xs text-gray-400 max-w-[250px]">
+                        *Chamados de alta urgência geram notificação instantânea para o CEO.
+                    </p>
+                    <button type="submit" class="bg-viBlue text-white font-bold px-10 py-4 rounded-lg hover:bg-viGold transition shadow-xl uppercase tracking-widest text-sm">
+                        Enviar para o CEO
+                    </button>
+                </div>
+            </form>
+
+            <div id="sucesso-msg" class="hidden text-center py-10 animate-fade-in">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 text-green-600 rounded-full mb-6 text-4xl">
+                    ✓
+                </div>
+                <h2 class="text-2xl font-bold text-viBlue mb-2">Protocolo Gerado com Sucesso!</h2>
+                <p class="text-gray-500 mb-8">Sua solicitação já está na mesa da diretoria.<br>Código do Chamado: <span class="font-mono font-bold text-viGold">#VI-2026-9842</span></p>
+                
+                <div class="bg-viLight p-4 rounded-lg mb-8 text-sm text-gray-600 italic">
+                    "Como sua urgência é <strong>ALTA</strong>, um consultor entrará em contato em até 45 minutos."
+                </div>
+
+                <a href="home.html" class="inline-block border-2 border-viBlue text-viBlue font-bold px-8 py-3 rounded-lg hover:bg-viBlue hover:text-white transition">
+                    Voltar ao Painel Principal
+                </a>
+            </div>
+
+        </div>
+
+        <div class="mt-12 text-center">
+            <p class="text-gray-400 text-sm italic">Status do Sistema: <span class="text-green-500 font-bold">Online</span></p>
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('chamado-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o recarregamento da página
+
+            // Esconde o formulário
+            document.getElementById('chamado-form').classList.add('hidden');
+            
+            // Mostra a mensagem de sucesso
+            const sucessoMsg = document.getElementById('sucesso-msg');
+            sucessoMsg.classList.remove('hidden');
+            
+            // Rola suavemente para o topo do container
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

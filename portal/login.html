@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Exclusivo | V.I. Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/login.js"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+    </script>
+</head>
+<body class="bg-viBlue min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-2xl p-10">
+        <div class="text-center mb-10">
+            <img class="h-12 mx-auto mb-6" src="../assets/img/logo-simbolo.png" alt="V.I. Company">
+            <h2 class="text-2xl font-bold text-viBlue">Portal de Governança</h2>
+            <p class="text-gray-500 text-sm">Acesse sua estrutura de gestão compartilhada</p>
+        </div>
+        
+        <form action="home.html" class="space-y-6">
+            <div>
+                <label class="block text-sm font-bold text-viBlue mb-2">Usuário</label>
+                <input type="text" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-viGold outline-none transition" placeholder="exemplo@suaempresa.com">
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-viBlue mb-2">Chave de Acesso</label>
+                <input type="password" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-viGold outline-none transition" placeholder="••••••••">
+            </div>
+            <button type="submit" class="w-full bg-viBlue text-white font-bold py-4 rounded-lg hover:bg-viGold transition shadow-lg uppercase tracking-wider">
+                Entrar no Sistema
+            </button>
+        </form>
+        
+        <div class="mt-8 text-center border-t pt-6">
+            <p class="text-xs text-gray-400 italic">Protegido pela infraestrutura de segurança Viana Interprice.</p>
+        </div>
+    </div>
+</body>
+</html>

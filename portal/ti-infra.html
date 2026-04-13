@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infraestrutura e T.I. | V.I. Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059' } } } }
+    </script>
+</head>
+<body class="bg-[#0b1120] text-gray-300 font-sans min-h-screen">
+
+    <header class="max-w-7xl mx-auto p-8 flex justify-between items-center border-b border-white/10">
+        <div>
+            <h1 class="text-2xl font-black text-white tracking-widest uppercase">Sistema de Governança Digital</h1>
+            <p class="text-viGold font-mono text-[10px] animate-pulse">● MONITORAMENTO ATIVO - CRIPTOGRAFIA AES-256</p>
+        </div>
+        <a href="dashboard.html" class="text-xs border border-white/20 px-4 py-2 rounded hover:bg-white/5 transition">Sair do Console</a>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                <p class="text-[10px] font-bold text-gray-500 uppercase mb-2">Uptime Servidores</p>
+                <p class="text-3xl font-black text-white">99.98%</p>
+                <div class="mt-4 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                    <div class="bg-green-500 h-full w-[99%] shadow-[0_0_15px_#22c55e]"></div>
+                </div>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                <p class="text-[10px] font-bold text-gray-400 uppercase mb-2">Ameaças Bloqueadas</p>
+                <p class="text-3xl font-black text-viGold">1.452</p>
+                <p class="text-[10px] text-green-400 mt-2">Segurança em Dia</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                <p class="text-[10px] font-bold text-gray-400 uppercase mb-2">Status do Backup</p>
+                <p class="text-3xl font-black text-blue-400">Cloud Sync</p>
+                <p class="text-[10px] text-gray-500 mt-2">Último: Hoje, 04:00 AM</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                <p class="text-[10px] font-bold text-gray-400 uppercase mb-2">Latência de Rede</p>
+                <p class="text-3xl font-black text-white">12ms</p>
+                <p class="text-[10px] text-gray-500 mt-2">Região: São Paulo, BR</p>
+            </div>
+        </div>
+
+        <div class="bg-black/40 border border-white/10 rounded-2xl p-8 font-mono text-xs overflow-hidden relative">
+            <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">💻</div>
+            <h3 class="text-viGold mb-6 flex items-center gap-2">
+                <span class="w-2 h-2 bg-viGold rounded-full animate-ping"></span>
+                Logs de Atividade em Tempo Real
+            </h3>
+            <div class="space-y-3 opacity-80">
+                <p><span class="text-green-500">[SUCCESS]</span> Firewall: Nova regra de proteção aplicada ao banco de dados.</p>
+                <p><span class="text-blue-400">[INFO]</span> SSH: Acesso autorizado para Diretoria (Viana Device).</p>
+                <p><span class="text-viGold">[WARN]</span> Tentativa de força bruta detectada e IP banido automaticamente.</p>
+                <p><span class="text-green-500">[SUCCESS]</span> Backup de Marketing concluído (Servidor AWS).</p>
+                <p class="animate-pulse text-gray-600">_ Aguardando novas requisições...</p>
+            </div>
+
+            <div class="mt-10 pt-8 border-t border-white/5 flex flex-wrap gap-4">
+                <button class="bg-viGold text-viBlue font-black px-6 py-3 rounded text-[10px] uppercase hover:scale-105 transition">Solicitar Auditoria de Segurança</button>
+                <button class="bg-white/5 border border-white/10 text-white px-6 py-3 rounded text-[10px] uppercase hover:bg-white/10 transition">Gerenciar Certificados SSL</button>
+                <button class="bg-white/5 border border-white/10 text-white px-6 py-3 rounded text-[10px] uppercase hover:bg-white/10 transition">Limpar Cache Global</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

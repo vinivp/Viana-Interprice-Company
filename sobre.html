@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos | V.I. Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+    </script>
+</head>
+<body class="bg-viLight font-sans text-gray-800">
+
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center"><img class="h-12" src="assets/img/logo-texto.png" alt="V.I. Company"></div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-viGold transition">Início</a>
+                    <a href="sobre.html" class="text-viBlue font-bold hover:text-viGold transition">Quem Somos</a>
+                    <a href="contato.html" class="bg-viBlue text-white px-6 py-2 rounded hover:bg-viGold">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-viBlue mb-8">Nossa Identidade</h1>
+            <p class="text-lg text-gray-600 mb-16">
+                A Viana Interprice Company nasceu para ser o cérebro operacional por trás das empresas de sucesso. Não somos uma agência, somos parceiros de governança.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <div class="bg-viLight p-8 rounded border-l-4 border-viGold">
+                    <h2 class="text-2xl font-bold text-viBlue mb-4">Nossa Missão</h2>
+                    <p class="text-gray-700">Profissionalizar a gestão operativa de empresas parceiras, transformando desafios operacionais em processos inteligentes e seguros para que o empreendedor foque no que realmente importa: o crescimento.</p>
+                </div>
+                <div class="bg-viLight p-8 rounded border-l-4 border-viBlue">
+                    <h2 class="text-2xl font-bold text-viBlue mb-4">Nossa Visão</h2>
+                    <p class="text-gray-700">Ser o principal ecossistema de gestão compartilhada do mercado, tornando-se o padrão de excelência em organização de processos e inteligência operacional para empresas de todos os portes.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-left">
+                <h2 class="text-3xl font-bold text-viBlue mb-8 text-center">Nossos Valores</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start"><span class="text-viGold mr-3 text-xl">✦</span> <p><strong>Transparência Radical:</strong> O cliente sempre sabe o "porquê" de cada decisão em nosso portal de aprovação.</p></li>
+                    <li class="flex items-start"><span class="text-viGold mr-3 text-xl">✦</span> <p><strong>Segurança Jurídica:</strong> Validamos cada passo para proteger o patrimônio e a marca dos nossos clientes.</p></li>
+                    <li class="flex items-start"><span class="text-viGold mr-3 text-xl">✦</span> <p><strong>Respeito ao Capital Humano:</strong> Foco no bem-estar, com processos justos e escalas inteligentes.</p></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

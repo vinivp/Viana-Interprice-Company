@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Jurídico | V.I. Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+    </script>
+</head>
+<body class="bg-viLight font-sans">
+    <div class="max-w-5xl mx-auto p-10">
+        <header class="flex justify-between items-center mb-10">
+            <div>
+                <h1 class="text-3xl font-bold text-viBlue">Jurídico & Compliance</h1>
+                <p class="text-gray-500 italic text-sm">Garantindo a segurança da sua marca e operação.</p>
+            </div>
+            <a href="dashboard.html" class="bg-viBlue text-white px-4 py-2 rounded-lg text-sm font-bold">Voltar ao Painel</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-green-50 border border-green-200 p-4 rounded-xl text-center">
+                <p class="text-xs text-green-600 font-bold uppercase">Status de Marca</p>
+                <p class="text-xl font-black text-viBlue">REGISTRADA</p>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl text-center">
+                <p class="text-xs text-blue-600 font-bold uppercase">Contratos Ativos</p>
+                <p class="text-xl font-black text-viBlue">08 Unidades</p>
+            </div>
+            <div class="bg-viGold/10 border border-viGold/30 p-4 rounded-xl text-center">
+                <p class="text-xs text-viGold font-bold uppercase">Pendências</p>
+                <p class="text-xl font-black text-viBlue text-red-600">01 Documento</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="p-6 bg-viBlue text-white font-bold">Central de Documentos para Validação</div>
+            <div class="p-0">
+                <div class="flex items-center justify-between p-6 border-b hover:bg-viLight transition">
+                    <div>
+                        <p class="font-bold text-viBlue">Aditivo Contratual - Expansão Setor MKT</p>
+                        <p class="text-xs text-gray-500">Enviado em: 10/04/2026 | Ref: #JUR-442</p>
+                    </div>
+                    <button class="bg-viGold text-white px-6 py-2 rounded font-bold hover:scale-105 transition">Ler e Assinar</button>
+                </div>
+                <div class="flex items-center justify-between p-6 border-b opacity-50">
+                    <div>
+                        <p class="font-bold text-viBlue">Parecer: Uso de Imagem Campanha de Natal</p>
+                        <p class="text-xs text-gray-500">Status: Concluído e Arquivado</p>
+                    </div>
+                    <span class="text-viBlue font-bold">Visualizar PDF</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

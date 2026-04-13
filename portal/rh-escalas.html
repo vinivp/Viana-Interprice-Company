@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor de Escalas V.I. | Gestão de Turnos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+    </script>
+</head>
+<body class="bg-viLight font-sans min-h-screen text-gray-800">
+    <div class="max-w-7xl mx-auto p-6 md:p-10">
+        <header class="flex justify-between items-center mb-10 border-b pb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-viBlue">Escala de Turnos V.I.</h1>
+                <p class="text-gray-500 italic text-sm">Distribuição Inteligente: Abertura, Intermediário e Fechamento.</p>
+            </div>
+            <a href="dashboard.html" class="text-viBlue font-bold border-2 border-viBlue px-4 py-2 rounded-lg hover:bg-viBlue hover:text-white transition">Voltar ao Painel</a>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div class="lg:col-span-1 space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-viGold">
+                    <h3 class="font-bold text-viBlue mb-4 uppercase text-xs">Parâmetros da Operação</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase">Equipe Total</label>
+                            <input type="number" id="totalStaff" value="12" class="w-full p-2 bg-viLight rounded border-none outline-none focus:ring-2 focus:ring-viGold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase">Mínimo p/ Turno</label>
+                            <input type="number" id="minPerTurn" value="3" class="w-full p-2 bg-viLight rounded border-none outline-none focus:ring-2 focus:ring-viGold">
+                        </div>
+                        <button onclick="processarEscalaViana()" class="w-full bg-viBlue text-white font-bold py-3 rounded-lg hover:bg-viGold transition shadow-md uppercase text-xs">Gerar Escala de Fluxo</button>
+                    </div>
+                </div>
+
+                <div id="feedbackStatus" class="p-6 rounded-2xl text-center font-bold text-xs shadow-inner">
+                    </div>
+            </div>
+
+            <div class="lg:col-span-3 bg-white p-6 rounded-2xl shadow-xl overflow-x-auto border border-gray-100">
+                <table class="w-full text-[11px] border-collapse">
+                    <thead>
+                        <tr class="bg-viBlue text-white uppercase italic">
+                            <th class="p-4 text-left rounded-tl-xl">Colaborador</th>
+                            <th class="p-4 text-center">SEG</th>
+                            <th class="p-4 text-center">TER</th>
+                            <th class="p-4 text-center">QUA</th>
+                            <th class="p-4 text-center">QUI</th>
+                            <th class="p-4 text-center">SEX</th>
+                            <th class="p-4 text-center text-viGold">SÁB</th>
+                            <th class="p-4 text-center text-viGold uppercase">DOM</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoEscala">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                <span class="font-bold text-blue-800">A - Abertura</span>
+                <p class="text-xs text-blue-600">07:00 às 15:00</p>
+            </div>
+            <div class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-400">
+                <span class="font-bold text-amber-800">I - Intermediário</span>
+                <p class="text-xs text-amber-600">10:00 às 18:00</p>
+            </div>
+            <div class="bg-viBlue/5 p-4 rounded-lg border-l-4 border-viBlue">
+                <span class="font-bold text-viBlue">F - Fechamento</span>
+                <p class="text-xs text-viBlue/70">14:00 às 22:00</p>
+            </div>
+            <button onclick="exportarEscalaPDF()" class="bg-viGold text-white px-6 py-2 rounded-lg font-bold hover:bg-viBlue transition flex items-center gap-2">
+                <span>📄</span> Exportar PDF
+            </button>
+        </div>
+    </div>
+
+    
+
+    <script>
+        function processarEscalaViana() {
+    const total = parseInt(document.getElementById('totalStaff').value);
+    const min = parseInt(document.getElementById('minPerTurn').value);
+    const corpo = document.getElementById('corpoEscala');
+    const status = document.getElementById('feedbackStatus');
+    
+    corpo.innerHTML = '';
+    const turnos = ['A', 'I', 'F'];
+    
+    // Calculamos quantos colaboradores teremos por turno para organizar a lista
+    const porTurno = Math.floor(total / 3);
+    const sobra = total % 3;
+
+    // Criamos um array organizado: Ex [A, A, A, I, I, I, F, F, F]
+    let listaTurnosOrdenada = [];
+    for (let t = 0; t < 3; t++) {
+        let qtdNesseTurno = porTurno + (t < sobra ? 1 : 0);
+        for (let i = 0; i < qtdNesseTurno; i++) {
+            listaTurnosOrdenada.push(turnos[t]);
+        }
+    }
+
+    // Agora geramos as linhas seguindo a ordem da lista criada
+    listaTurnosOrdenada.forEach((turnoBase, index) => {
+    let i = index + 1;
+    let folga1, folga2;
+
+    // ESTRATÉGIA VIANA INTERPRICE: Blindagem de Fim de Semana Ampliada (Sex-Dom)
+    if (turnoBase === 'F') {
+        // Fechamento: Folgas apenas de Segunda (1) a Quinta (4).
+        // Garante 100% da equipe na Sexta (5), Sábado (6) e Domingo (0).
+        folga1 = (i % 4) + 1; 
+        folga2 = (folga1 >= 4) ? 1 : folga1 + 1;
+    } 
+    else if (turnoBase === 'A') {
+        // Abertura: Equilíbrio mínimo.
+        // As folgas podem cair no FDS, mas rotacionam para manter 1 ou 2 ativos.
+        folga1 = (i % 7);
+        folga2 = (i + 3) % 7; 
+    }
+    else {
+        // Intermediário: Suporte flexível.
+        // Distribuição padrão para cobrir os meios de semana e transições.
+        folga1 = (i % 6);
+        folga2 = (folga1 + 1) % 7;
+    }
+
+    let labelTurno = turnoBase === 'A' ? "Abertura" : (turnoBase === 'I' ? "Intermediário" : "Fechamento");
+    let corTurno = turnoBase === 'A' ? "text-blue-600" : (turnoBase === 'I' ? "text-amber-600" : "text-viBlue");
+
+    let linha = `
+        <tr class="border-b hover:bg-gray-50 transition">
+            <td class="p-4 font-bold text-viBlue border-r italic">
+                Colaborador ${String(i).padStart(2, '0')} 
+                <span class="block text-[9px] font-normal text-gray-400 uppercase tracking-wider">${labelTurno}</span>
+            </td>`;
+    
+    for (let d = 0; d < 7; d++) {
+        // d=0 é Domingo, d=5 é Sexta, d=6 é Sábado
+        if (d === folga1 || d === folga2) {
+            linha += `<td class="p-4 text-center bg-red-50 text-red-400 font-black">FOLGA</td>`;
+        } else {
+            linha += `<td class="p-4 text-center font-bold ${corTurno}">${turnoBase}</td>`;
+        }
+    }
+    linha += `</tr>`;
+    corpo.innerHTML += linha;
+});
+
+    if (total < (min * 3)) {
+        status.className = "p-6 rounded-2xl text-center bg-red-100 text-red-600 shadow-inner border border-red-200";
+        status.innerHTML = "⚠️ COBERTURA INSUFICIENTE<br><span class='font-normal opacity-70 text-[10px]'>Aumente o efetivo para garantir o mínimo em todos os turnos.</span>";
+    } else {
+        status.className = "p-6 rounded-2xl text-center bg-green-100 text-green-600 shadow-inner border border-green-200";
+        status.innerHTML = "✅ ESCALA ORGANIZADA<br><span class='font-normal opacity-70 text-[10px]'>Fluxo linear de Abertura até Fechamento garantido.</span>";
+    }
+}
+
+function exportarEscalaPDF() {
+    const elemento = document.querySelector('main'); // Seleciona o conteúdo principal
+    const opcoes = {
+        margin: 10,
+        filename: 'Escala-Viana-Interprice.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+    };
+    
+    html2pdf().set(opcoes).from(elemento).save();
+}
+
+        window.onload = processarEscalaViana;
+    </script>
+</body>
+</html>

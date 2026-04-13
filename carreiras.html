@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe Conosco | V.I. Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+    </script>
+</head>
+<body class="bg-viLight font-sans text-gray-800">
+
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center">
+            <a href="index.html"><img class="h-12" src="assets/img/logo-texto.png" alt="V.I. Company"></a>
+            <a href="index.html" class="text-gray-600 hover:text-viBlue">← Voltar ao Início</a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 bg-viBlue text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-4 text-viGold">Faça parte da Elite da Gestão</h1>
+            <p class="text-xl text-gray-300">Buscamos profissionais que pensam como donos e executam com maestria.</p>
+        </div>
+    </header>
+
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-viBlue mb-12">Nossas Vagas Abertas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded shadow hover:border-viGold border-2 border-transparent transition cursor-pointer">
+                    <span class="text-xs font-bold text-viGold uppercase tracking-widest">Tecnologia</span>
+                    <h3 class="text-xl font-bold text-viBlue mt-2">Desenvolvedor Full Stack Pleno</h3>
+                    <p class="text-gray-600 mt-4 text-sm">Focado na evolução do nosso simulador de escalas e portais de clientes.</p>
+                    <div class="mt-6 flex justify-between items-center text-viBlue font-bold">
+                        <span>Remoto / Híbrido</span>
+                        <span class="text-viGold">Candidatar-se →</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded shadow hover:border-viGold border-2 border-transparent transition cursor-pointer">
+                    <span class="text-xs font-bold text-viGold uppercase tracking-widest">Marketing</span>
+                    <h3 class="text-xl font-bold text-viBlue mt-2">Analista de Trade Marketing</h3>
+                    <p class="text-gray-600 mt-4 text-sm">Responsável por estratégias de ponto de venda para nossos clientes do varejo.</p>
+                    <div class="mt-6 flex justify-between items-center text-viBlue font-bold">
+                        <span>Presencial</span>
+                        <span class="text-viGold">Candidatar-se →</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 bg-viBlue text-white p-10 rounded-2xl text-center">
+                <h2 class="text-2xl font-bold mb-4">Não encontrou sua vaga?</h2>
+                <p class="mb-8 opacity-80">Estamos sempre de olho em novos talentos para os setores Financeiro, Jurídico e RH.</p>
+                <a href="mailto:talentos@vianainterprice.com" class="inline-block bg-viGold text-white font-bold px-10 py-3 rounded-full hover:scale-105 transition">
+                    Enviar Currículo para o Banco de Talentos
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

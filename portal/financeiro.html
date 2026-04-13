@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeiro Estratégico | V.I. Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+    </script>
+</head>
+<body class="bg-viBlue text-white font-sans min-h-screen">
+    <div class="max-w-5xl mx-auto p-10">
+        <header class="flex justify-between items-center mb-16">
+            <h1 class="text-3xl font-bold border-l-4 border-viGold pl-4">Saúde Financeira da Operação</h1>
+            <a href="dashboard.html" class="text-viGold">Voltar</a>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
+                <h3 class="text-gray-400 text-sm uppercase font-bold mb-2">Margem de Contribuição</h3>
+                <p class="text-4xl font-black text-viGold">R$ 42.500,00</p>
+                <div class="mt-4 text-green-400 text-sm">↑ 12% em relação ao mês anterior</div>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
+                <h3 class="text-gray-400 text-sm uppercase font-bold mb-2">Custos Operacionais</h3>
+                <p class="text-4xl font-black">R$ 18.200,00</p>
+                <div class="mt-4 text-viGold text-sm">Otimização de 5% via Escalas V.I.</div>
+            </div>
+        </div>
+
+        <div class="mt-10 bg-white text-viBlue p-10 rounded-3xl">
+            <h3 class="text-xl font-bold mb-6 italic text-center">"Sua operação está saudável e pronta para expansão."</h3>
+            <p class="text-center text-gray-500">Relatório consolidado pela auditoria Viana Interprice.</p>
+        </div>
+    </div>
+</body>
+</html>

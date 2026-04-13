@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Operacional | V.I. Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+    </script>
+</head>
+<body class="bg-viLight font-sans flex min-h-screen">
+
+    <aside class="w-64 bg-viBlue text-white p-6 shadow-2xl hidden md:flex flex-col">
+        <div class="mb-12">
+            <h2 class="text-xl font-black tracking-tighter italic">VIANA INTERPRICE</h2>
+            <p class="text-[10px] text-viGold uppercase tracking-[0.3em]">Management Portal</p>
+        </div>
+        <nav class="space-y-2 flex-1">
+            <a href="home.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition text-sm">Painel Principal</a>
+            <a href="mkt-pendencias.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition text-sm">Marketing</a>
+            <a href="rh-escalas.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition text-sm">RH & Escalas</a>
+            <a href="financeiro.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition text-sm">Financeiro</a>
+            <a href="juridico.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition text-sm">Jurídico</a>
+            <a href="ti-infra.html" class="flex items-center gap-3 p-3 rounded-lg bg-viGold/20 text-viGold font-bold text-sm">Infraestrutura T.I.</a>
+        </nav>
+        <div class="pt-6 border-t border-white/10">
+            <a href="../index.html" class="text-xs text-gray-400 hover:text-white">Sair do Sistema</a>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-8 md:p-12">
+        <header class="flex justify-between items-center mb-12">
+            <div>
+                <h1 class="text-4xl font-black text-viBlue tracking-tighter">Dashboard Operacional</h1>
+                <p class="text-gray-500">Gestão de ativos e aprovações em tempo real.</p>
+            </div>
+            <div class="text-right">
+                <p class="text-xs font-bold text-viBlue uppercase">Status Geral</p>
+                <span class="flex items-center gap-2 text-green-500 font-bold text-sm">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> Operação Online
+                </span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="text-3xl">📣</span>
+                    <span class="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-1 rounded">02 Pendentes</span>
+                </div>
+                <h3 class="text-xl font-bold text-viBlue mb-2">Marketing On/Off</h3>
+                <p class="text-sm text-gray-500 mb-6">Aprovação de criativos e campanhas validadas pelo jurídico.</p>
+                <a href="mkt-pendencias.html" class="inline-block w-full text-center py-3 rounded-xl border-2 border-viBlue text-viBlue font-bold hover:bg-viBlue hover:text-white transition">Gerenciar Campanhas</a>
+            </div>
+
+            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="text-3xl">👥</span>
+                    <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded">Escala Ativa</span>
+                </div>
+                <h3 class="text-xl font-bold text-viBlue mb-2">RH & Escalas</h3>
+                <p class="text-sm text-gray-500 mb-6">Controle de turnos 5x2 com peso estratégico em fins de semana.</p>
+                <a href="rh-escalas.html" class="inline-block w-full text-center py-3 rounded-xl border-2 border-viBlue text-viBlue font-bold hover:bg-viBlue hover:text-white transition">Simulador Pro</a>
+            </div>
+
+            <div class="group bg-viBlue p-8 rounded-3xl shadow-lg border border-viBlue hover:shadow-viBlue/30 transition-all duration-300">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="text-3xl">🛡️</span>
+                    <span class="bg-viGold text-viBlue text-[10px] font-bold px-2 py-1 rounded uppercase">Protegido</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Infraestrutura T.I.</h3>
+                <p class="text-sm text-blue-200 mb-6">Monitoramento de uptime, backups e segurança cibernética.</p>
+                <a href="ti-infra.html" class="inline-block w-full text-center py-3 rounded-xl bg-viGold text-viBlue font-bold hover:bg-white transition">Console de Rede</a>
+            </div>
+
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
+                <div>
+                    <h4 class="text-viBlue font-bold">Relatórios Financeiros</h4>
+                    <p class="text-xs text-gray-400 italic">Disponível no Plano Gold</p>
+                </div>
+                <a href="financeiro.html" class="text-viGold font-black text-sm uppercase hover:underline">Acessar Auditoria</a>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
+                <div>
+                    <h4 class="text-viBlue font-bold">Compliance Jurídico</h4>
+                    <p class="text-xs text-gray-400">01 Documento aguardando assinatura</p>
+                </div>
+                <a href="juridico.html" class="text-viGold font-black text-sm uppercase hover:underline">Ver Documentos</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
