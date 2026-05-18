@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | Viana Interprice Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        viBlue: '#003366',
+                        viGold: '#C5A059',
+                        viLight: '#F8FAFC',
+                        viInk: '#101828',
+                        viMint: '#10B981',
+                        viCoral: '#E76F51'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-viLight font-sans text-viInk">
+    <nav class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="index.html"><img class="h-10" src="assets/img/logo-texto.png" alt="Viana Interprice Company"></a>
+            <div class="hidden items-center gap-7 md:flex">
+                <a href="index.html" class="text-slate-600 hover:text-viGold">Início</a>
+                <a href="servicos.html" class="font-bold text-viBlue">Serviços</a>
+                <a href="metodologia.html" class="text-slate-600 hover:text-viGold">Método</a>
+                <a href="portal-demo.html" class="text-slate-600 hover:text-viGold">Demo do portal</a>
+                <a href="portal/login.html" class="rounded border-2 border-viBlue px-4 py-2 font-bold text-viBlue hover:bg-viBlue hover:text-white">Portal</a>
+                <a href="contato.html" class="rounded bg-viBlue px-5 py-2 font-bold text-white hover:bg-viGold">Diagnóstico</a>
+            </div>
+            <a href="contato.html" class="rounded bg-viBlue px-3 py-2 text-sm font-bold text-white md:hidden">Contato</a>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <header class="bg-white py-16">
+            <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+                <div>
+                    <p class="text-sm font-black uppercase tracking-[0.22em] text-viGold">Serviços</p>
+                    <h1 class="mt-3 text-4xl font-black leading-tight text-viBlue sm:text-5xl">Comece pequeno, organize rápido e escale por módulos.</h1>
+                    <p class="mt-5 text-lg leading-8 text-slate-600">A V.I. não precisa vender tudo de uma vez. O cliente entra pelo diagnóstico, escolhe a primeira frente e depois evolui para gestão mensal.</p>
+                </div>
+                <div class="border border-slate-200 bg-viLight p-6">
+                    <p class="text-xs font-black uppercase tracking-[0.2em] text-viGold">Oferta recomendada</p>
+                    <h2 class="mt-3 text-2xl font-black text-viBlue">Diagnóstico Operacional V.I.</h2>
+                    <p class="mt-3 text-slate-600">Mapa de gargalos, prioridade do mês e proposta de execução por módulo.</p>
+                    <div class="mt-6 grid gap-3 sm:grid-cols-3">
+                        <span class="rounded bg-white px-3 py-2 text-center text-sm font-bold text-viBlue">7 dias</span>
+                        <span class="rounded bg-white px-3 py-2 text-center text-sm font-bold text-viBlue">1 plano</span>
+                        <span class="rounded bg-white px-3 py-2 text-center text-sm font-bold text-viBlue">5 áreas</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="py-16">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-5 lg:grid-cols-3">
+                    <article class="border border-slate-200 bg-white p-8 shadow-sm">
+                        <p class="text-sm font-black uppercase tracking-[0.18em] text-viGold">Entrada</p>
+                        <h2 class="mt-3 text-2xl font-black text-viBlue">Diagnóstico Operacional</h2>
+                        <p class="mt-4 text-slate-600">Para descobrir por onde começar sem assustar o cliente com uma proposta grande.</p>
+                        <ul class="mt-6 space-y-3 text-sm text-slate-700">
+                            <li>- Entrevista com o dono ou gestor</li>
+                            <li>- Mapa de gargalos por área</li>
+                            <li>- Prioridade dos próximos 30 dias</li>
+                            <li>- Proposta de rotina mensal</li>
+                        </ul>
+                    </article>
+                    <article class="border border-slate-200 bg-white p-8 shadow-sm">
+                        <p class="text-sm font-black uppercase tracking-[0.18em] text-viGold">Módulo</p>
+                        <h2 class="mt-3 text-2xl font-black text-viBlue">Gestão por Área</h2>
+                        <p class="mt-4 text-slate-600">Para empresas que precisam resolver primeiro um setor específico.</p>
+                        <ul class="mt-6 space-y-3 text-sm text-slate-700">
+                            <li>- RH e escala</li>
+                            <li>- Marketing e aprovações</li>
+                            <li>- Financeiro e custos</li>
+                            <li>- Jurídico, LGPD e contratos</li>
+                            <li>- T.I., suporte e segurança</li>
+                        </ul>
+                    </article>
+                    <article class="border border-viBlue bg-viBlue p-8 text-white shadow-sm">
+                        <p class="text-sm font-black uppercase tracking-[0.18em] text-viGold">Mensal</p>
+                        <h2 class="mt-3 text-2xl font-black">Gestão Compartilhada</h2>
+                        <p class="mt-4 text-blue-100">Para empresas que querem a V.I. como diretoria operacional externa.</p>
+                        <ul class="mt-6 space-y-3 text-sm text-blue-100">
+                            <li>- Reunião de rotina</li>
+                            <li>- Portal com status e aprovações</li>
+                            <li>- Indicadores e pendências</li>
+                            <li>- Execução coordenada entre áreas</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-16">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-black uppercase tracking-[0.22em] text-viGold">Módulos operacionais</p>
+                    <h2 class="mt-3 text-3xl font-black text-viBlue sm:text-4xl">Cada módulo resolve uma dor, mas todos conversam no mesmo portal.</h2>
+                </div>
+
+                <div class="mt-10 grid gap-6 lg:grid-cols-2">
+                    <article class="border border-slate-200 bg-viLight p-8">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-[0.2em] text-viGold">Pessoas</p>
+                                <h3 class="mt-2 text-2xl font-black text-viBlue">RH & Escalas</h3>
+                            </div>
+                            <span class="w-fit rounded bg-blue-50 px-3 py-1 text-xs font-bold text-viBlue">Equipe previsível</span>
+                        </div>
+                        <p class="mt-4 text-slate-600">Escala, cobertura de turno, recrutamento, função, rotina e clima.</p>
+                    </article>
+
+                    <article class="border border-slate-200 bg-viLight p-8">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-[0.2em] text-viGold">Controle</p>
+                                <h3 class="mt-2 text-2xl font-black text-viBlue">Financeiro & Performance</h3>
+                            </div>
+                            <span class="w-fit rounded bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">Margem e caixa</span>
+                        </div>
+                        <p class="mt-4 text-slate-600">Contas, fornecedores, desperdício, indicadores e plano de redução de custo.</p>
+                    </article>
+
+                    <article class="border border-slate-200 bg-viLight p-8">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-[0.2em] text-viGold">Crescimento</p>
+                                <h3 class="mt-2 text-2xl font-black text-viBlue">Marketing & Trade</h3>
+                            </div>
+                            <span class="w-fit rounded bg-orange-50 px-3 py-1 text-xs font-bold text-orange-700">Campanha com critério</span>
+                        </div>
+                        <p class="mt-4 text-slate-600">Criativos, calendário comercial, material de loja, campanhas e aprovações.</p>
+                    </article>
+
+                    <article class="border border-slate-200 bg-viLight p-8">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-[0.2em] text-viGold">Segurança</p>
+                                <h3 class="mt-2 text-2xl font-black text-viBlue">Jurídico & Compliance</h3>
+                            </div>
+                            <span class="w-fit rounded bg-amber-50 px-3 py-1 text-xs font-bold text-amber-700">Risco controlado</span>
+                        </div>
+                        <p class="mt-4 text-slate-600">Contratos, LGPD, validação preventiva e regras de aprovação.</p>
+                    </article>
+
+                    <article class="border border-slate-200 bg-viLight p-8 lg:col-span-2">
+                        <div class="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-[0.2em] text-viGold">Base técnica</p>
+                                <h3 class="mt-2 text-2xl font-black text-viBlue">T.I. & Portal</h3>
+                                <p class="mt-4 text-slate-600">Chamados, documentos, permissões, imagens, backups e acompanhamento de status.</p>
+                            </div>
+                            <div class="grid gap-3 sm:grid-cols-3">
+                                <div class="border border-slate-200 bg-white p-4">
+                                    <p class="text-xs font-bold uppercase text-slate-400">Chamado</p>
+                                    <p class="mt-2 font-black text-viBlue">SLA e status</p>
+                                </div>
+                                <div class="border border-slate-200 bg-white p-4">
+                                    <p class="text-xs font-bold uppercase text-slate-400">Arquivo</p>
+                                    <p class="mt-2 font-black text-viBlue">Storage seguro</p>
+                                </div>
+                                <div class="border border-slate-200 bg-white p-4">
+                                    <p class="text-xs font-bold uppercase text-slate-400">Decisão</p>
+                                    <p class="mt-2 font-black text-viBlue">Aprovar ou ajustar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+                <div>
+                    <p class="text-sm font-black uppercase tracking-[0.22em] text-viGold">Como vender</p>
+                    <h2 class="mt-3 text-3xl font-black text-viBlue">O cliente compra alívio, não uma lista de tarefas.</h2>
+                    <p class="mt-4 text-lg leading-8 text-slate-600">Por isso cada proposta deve sair do diagnóstico com uma frase simples: "vamos resolver primeiro este gargalo, por este motivo, com esta rotina".</p>
+                </div>
+                <div class="grid gap-4 md:grid-cols-3">
+                    <div class="border border-slate-200 bg-white p-6">
+                        <p class="font-black text-viBlue">1. Dor clara</p>
+                        <p class="mt-2 text-sm text-slate-600">Exemplo: escala quebrando todo sábado.</p>
+                    </div>
+                    <div class="border border-slate-200 bg-white p-6">
+                        <p class="font-black text-viBlue">2. Rotina simples</p>
+                        <p class="mt-2 text-sm text-slate-600">Quem pede, quem executa, quem aprova.</p>
+                    </div>
+                    <div class="border border-slate-200 bg-white p-6">
+                        <p class="font-black text-viBlue">3. Resultado visível</p>
+                        <p class="mt-2 text-sm text-slate-600">Menos urgência, mais controle e dados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-viBlue py-16 text-white">
+            <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+                <div>
+                    <h2 class="text-3xl font-black">O melhor começo é um diagnóstico enxuto.</h2>
+                    <p class="mt-3 text-blue-100">Depois dele, a V.I. pode vender módulo, rotina mensal ou gestão compartilhada completa.</p>
+                </div>
+                <a href="contato.html" class="rounded bg-viGold px-7 py-4 text-center font-bold text-white hover:bg-white hover:text-viBlue">Solicitar diagnóstico</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

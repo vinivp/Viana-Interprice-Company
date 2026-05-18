@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo do Portal | Viana Interprice Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        viBlue: '#003366',
+                        viGold: '#C5A059',
+                        viLight: '#F8FAFC',
+                        viInk: '#101828',
+                        viMint: '#10B981',
+                        viCoral: '#E76F51'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-viLight font-sans text-viInk">
+    <nav class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="index.html"><img class="h-10" src="assets/img/logo-texto.png" alt="Viana Interprice Company"></a>
+            <div class="hidden items-center gap-7 md:flex">
+                <a href="index.html" class="text-slate-600 hover:text-viGold">Início</a>
+                <a href="servicos.html" class="text-slate-600 hover:text-viGold">Serviços</a>
+                <a href="metodologia.html" class="text-slate-600 hover:text-viGold">Método</a>
+                <a href="portal-demo.html" class="font-bold text-viBlue">Demo do portal</a>
+                <a href="portal/login.html" class="rounded border-2 border-viBlue px-4 py-2 font-bold text-viBlue hover:bg-viBlue hover:text-white">Portal</a>
+                <a href="contato.html" class="rounded bg-viBlue px-5 py-2 font-bold text-white hover:bg-viGold">Diagnóstico</a>
+            </div>
+            <a href="contato.html" class="rounded bg-viBlue px-3 py-2 text-sm font-bold text-white md:hidden">Contato</a>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="bg-white py-16">
+            <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+                <div>
+                    <p class="text-sm font-black uppercase tracking-[0.22em] text-viGold">Demonstração pública</p>
+                    <h1 class="mt-3 text-4xl font-black leading-tight text-viBlue sm:text-5xl">O portal transforma mensagens soltas em decisões acompanháveis.</h1>
+                    <p class="mt-5 text-lg leading-8 text-slate-600">Esta página mostra como o cliente visualiza módulos, aprovações, chamados e indicadores. O login real fica separado para clientes ativos.</p>
+                    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                        <a href="contato.html" class="rounded bg-viBlue px-7 py-4 text-center font-bold text-white transition hover:bg-viGold">Solicitar diagnóstico</a>
+                        <a href="portal/login.html" class="rounded border border-slate-300 px-7 py-4 text-center font-bold text-viBlue transition hover:border-viBlue hover:bg-blue-50">Entrar no portal</a>
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 bg-white shadow-xl">
+                    <div class="border-b border-slate-200 p-5">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                            <div class="flex items-center gap-3">
+                                <img class="h-10 w-10" src="assets/img/logo-simbolo.png" alt="">
+                                <div>
+                                    <p class="font-black text-viBlue">Fast Bebidas</p>
+                                    <p class="text-sm text-slate-500">Cliente demonstrativo</p>
+                                </div>
+                            </div>
+                            <span class="w-fit rounded bg-emerald-50 px-3 py-1 text-xs font-black text-emerald-700">Operação saudável</span>
+                        </div>
+                    </div>
+
+                    <div class="grid border-b border-slate-200 sm:grid-cols-4">
+                        <div class="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
+                            <p class="text-xs font-black uppercase text-slate-400">Pendências</p>
+                            <p class="mt-2 text-3xl font-black text-viBlue">03</p>
+                        </div>
+                        <div class="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
+                            <p class="text-xs font-black uppercase text-slate-400">Chamados</p>
+                            <p class="mt-2 text-3xl font-black text-viBlue">07</p>
+                        </div>
+                        <div class="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
+                            <p class="text-xs font-black uppercase text-slate-400">Módulos</p>
+                            <p class="mt-2 text-3xl font-black text-viBlue">05</p>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-xs font-black uppercase text-slate-400">SLA</p>
+                            <p class="mt-2 text-3xl font-black text-emerald-600">94%</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5">
+                        <p class="text-xs font-black uppercase tracking-[0.18em] text-viGold">Fila de decisão</p>
+                        <div class="mt-4 divide-y divide-slate-200 border border-slate-200">
+                            <div class="p-4">
+                                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                                    <p class="font-black text-viBlue">Campanha de fim de semana</p>
+                                    <span class="w-fit rounded bg-amber-50 px-3 py-1 text-xs font-bold text-amber-700">Aguardando orçamento</span>
+                                </div>
+                                <p class="mt-2 text-sm text-slate-600">Marketing pronto, jurídico validado, financeiro revisando limite.</p>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                                    <p class="font-black text-viBlue">Troca de escala sábado</p>
+                                    <span class="w-fit rounded bg-blue-50 px-3 py-1 text-xs font-bold text-viBlue">Pedir ajuste</span>
+                                </div>
+                                <p class="mt-2 text-sm text-slate-600">Cobertura mínima caiu abaixo do padrão definido no playbook.</p>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                                    <p class="font-black text-viBlue">Contrato com fornecedor</p>
+                                    <span class="w-fit rounded bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">Liberado</span>
+                                </div>
+                                <p class="mt-2 text-sm text-slate-600">Cláusulas revisadas e documento pronto para assinatura.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-black uppercase tracking-[0.22em] text-viGold">O que o cliente vê</p>
+                    <h2 class="mt-3 text-3xl font-black text-viBlue">Menos conversa perdida. Mais status, responsável e próxima ação.</h2>
+                </div>
+
+                <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                    <article class="border border-slate-200 bg-white p-6">
+                        <p class="text-3xl font-black text-viGold">01</p>
+                        <h3 class="mt-4 font-black text-viBlue">Módulos</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-600">Marketing, RH, jurídico, financeiro e T.I. com status próprio.</p>
+                    </article>
+                    <article class="border border-slate-200 bg-white p-6">
+                        <p class="text-3xl font-black text-viGold">02</p>
+                        <h3 class="mt-4 font-black text-viBlue">Aprovações</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-600">Aprovar, reprovar ou pedir ajuste sem perder histórico.</p>
+                    </article>
+                    <article class="border border-slate-200 bg-white p-6">
+                        <p class="text-3xl font-black text-viGold">03</p>
+                        <h3 class="mt-4 font-black text-viBlue">Chamados</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-600">Solicitações com prioridade, prazo e acompanhamento.</p>
+                    </article>
+                    <article class="border border-slate-200 bg-white p-6">
+                        <p class="text-3xl font-black text-viGold">04</p>
+                        <h3 class="mt-4 font-black text-viBlue">Indicadores</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-600">Pendências, módulos ativos, saúde da operação e próximos passos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-viBlue py-16 text-white">
+            <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+                <div>
+                    <h2 class="text-3xl font-black">O portal é a parte visível da gestão.</h2>
+                    <p class="mt-3 text-blue-100">A venda fica mais forte quando o cliente entende que não está comprando tarefa solta, mas controle operacional.</p>
+                </div>
+                <a href="contato.html" class="rounded bg-viGold px-7 py-4 text-center font-bold text-white hover:bg-white hover:text-viBlue">Quero ver aplicado no meu negócio</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

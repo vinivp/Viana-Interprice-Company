@@ -3,56 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seja um Parceiro | V.I. Company</title>
+    <title>Diagnóstico Operacional | Viana Interprice Company</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/supabase-config.js"></script>
+    <script type="module" src="assets/js/contact.js"></script>
     <script>
-        tailwind.config = { theme: { extend: { colors: { viBlue: '#003366', viGold: '#C5A059', viLight: '#F8FAFC' } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        viBlue: '#003366',
+                        viGold: '#C5A059',
+                        viLight: '#F8FAFC',
+                        viInk: '#101828',
+                        viMint: '#10B981'
+                    }
+                }
+            }
+        }
     </script>
 </head>
-<body class="bg-viLight font-sans text-gray-800">
-
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center">
-            <a href="index.html"><img class="h-12" src="assets/img/logo-texto.png" alt="V.I. Company"></a>
-            <a href="index.html" class="text-gray-600 hover:text-viBlue">← Voltar ao site</a>
+<body class="bg-viLight font-sans text-viInk">
+    <nav class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="index.html"><img class="h-10" src="assets/img/logo-texto.png" alt="Viana Interprice Company"></a>
+            <div class="flex items-center gap-4">
+                <a href="portal-demo.html" class="hidden font-bold text-slate-600 hover:text-viBlue sm:inline-flex">Demo do portal</a>
+                <a href="index.html" class="font-bold text-slate-600 hover:text-viBlue">Voltar ao site</a>
+            </div>
         </div>
     </nav>
 
-    <section class="pt-32 pb-20">
-        <div class="max-w-2xl mx-auto bg-white p-10 rounded-lg shadow-xl">
-            <h2 class="text-3xl font-bold text-viBlue mb-2 text-center">Fale com a Diretoria</h2>
-            <p class="text-center text-gray-500 mb-8">Preencha os dados abaixo e faremos um diagnóstico inicial da sua operação.</p>
-            
-            <form action="#" method="POST" class="space-y-6">
+    <main class="pt-20">
+        <section class="bg-white py-16">
+            <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
                 <div>
-                    <label class="block text-gray-700 font-bold mb-2">Nome do Empresário</label>
-                    <input type="text" class="w-full px-4 py-3 border rounded focus:outline-none focus:border-viGold" placeholder="Seu nome completo">
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-gray-700 font-bold mb-2">Empresa</label>
-                        <input type="text" class="w-full px-4 py-3 border rounded focus:outline-none focus:border-viGold" placeholder="Nome do seu negócio">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-bold mb-2">Qual seu maior gargalo hoje?</label>
-                        <select class="w-full px-4 py-3 border rounded focus:outline-none focus:border-viGold bg-white">
-                            <option>Organização de Escalas (RH)</option>
-                            <option>Processos Jurídicos/Compliance</option>
-                            <option>Marketing e Design</option>
-                            <option>Gestão Financeira</option>
-                            <option>Outros</option>
-                        </select>
+                    <p class="text-sm font-black uppercase tracking-[0.22em] text-viGold">Diagnóstico Operacional V.I.</p>
+                    <h1 class="mt-3 text-4xl font-black leading-tight text-viBlue sm:text-5xl">Descubra qual gargalo está segurando sua empresa agora.</h1>
+                    <p class="mt-5 text-lg leading-8 text-slate-600">A primeira conversa identifica onde a empresa perde tempo, margem, controle ou segurança. Depois disso, a V.I. propõe um plano de 30 dias.</p>
+
+                    <div class="mt-8 grid gap-4">
+                        <div class="border border-slate-200 bg-viLight p-5">
+                            <p class="font-black text-viBlue">O que você recebe</p>
+                            <p class="mt-1 text-sm text-slate-600">Mapa de gargalos, prioridade do mês e sugestão de módulo inicial.</p>
+                        </div>
+                        <div class="border border-slate-200 bg-viLight p-5">
+                            <p class="font-black text-viBlue">Para quem faz sentido</p>
+                            <p class="mt-1 text-sm text-slate-600">Negócios locais, distribuidoras, lojas, bares, empresas familiares e prestadores com operação crescendo.</p>
+                        </div>
+                        <div id="whatsapp" class="border border-emerald-200 bg-emerald-50 p-5">
+                            <p class="font-black text-emerald-800">Prefere WhatsApp?</p>
+                            <p class="mt-1 text-sm text-emerald-700">Preencha o campo de WhatsApp no formulário e a resposta pode voltar por lá. Quando o número oficial da V.I. estiver definido, este botão vira atendimento direto.</p>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <label class="block text-gray-700 font-bold mb-2">Sua visão ou parâmetro</label>
-                    <textarea class="w-full px-4 py-3 border rounded focus:outline-none focus:border-viGold" rows="4" placeholder="Descreva brevemente o que você espera que a V.I. Company assuma para você..."></textarea>
+
+                <div class="border border-slate-200 bg-white p-6 shadow-xl sm:p-10">
+                    <h2 class="text-2xl font-black text-viBlue">Solicitar diagnóstico</h2>
+                    <p class="mt-2 text-slate-500">Conte o básico da empresa. O lead fica salvo no Supabase quando o projeto está conectado.</p>
+
+                    <form id="contactForm" class="mt-8 space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-viBlue">Nome do empresário</label>
+                            <input id="name" name="name" type="text" required class="mt-2 w-full rounded border border-slate-300 px-4 py-3 outline-none transition focus:border-viGold focus:ring-2 focus:ring-viGold/20" placeholder="Seu nome completo">
+                        </div>
+
+                        <div class="grid gap-5 sm:grid-cols-2">
+                            <div>
+                                <label for="company" class="block text-sm font-bold text-viBlue">Empresa</label>
+                                <input id="company" name="company" type="text" required class="mt-2 w-full rounded border border-slate-300 px-4 py-3 outline-none transition focus:border-viGold focus:ring-2 focus:ring-viGold/20" placeholder="Nome do negócio">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-bold text-viBlue">E-mail</label>
+                                <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required class="mt-2 w-full rounded border border-slate-300 px-4 py-3 outline-none transition focus:border-viGold focus:ring-2 focus:ring-viGold/20" placeholder="voce@empresa.com">
+                            </div>
+                        </div>
+
+                        <div class="grid gap-5 sm:grid-cols-2">
+                            <div>
+                                <label for="phone" class="block text-sm font-bold text-viBlue">WhatsApp</label>
+                                <input id="phone" name="phone" type="tel" class="mt-2 w-full rounded border border-slate-300 px-4 py-3 outline-none transition focus:border-viGold focus:ring-2 focus:ring-viGold/20" placeholder="(00) 00000-0000">
+                            </div>
+                            <div>
+                                <label for="segment" class="block text-sm font-bold text-viBlue">Tipo de negócio</label>
+                                <select id="segment" name="segment" class="mt-2 w-full rounded border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-viGold focus:ring-2 focus:ring-viGold/20">
+                                    <option>Loja ou comércio local</option>
+                                    <option>Bar, restaurante ou bebida</option>
+                                    <option>Distribuidora</option>
+                                    <option>Prestador de serviço</option>
+                                    <option>Empresa familiar</option>
+                                    <option>Outro segmento</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="bottleneck" class="block text-sm font-bold text-viBlue">Maior gargalo hoje</label>
+                            <select id="bottleneck" name="bottleneck" required class="mt-2 w-full rounded border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-viGold focus:ring-2 focus:ring-viGold/20">
+                                <option value="">Selecione</option>
+                                <option>Organização de escalas e equipe</option>
+                                <option>Marketing e aprovação de campanhas</option>
+                                <option>Jurídico, contratos ou LGPD</option>
+                                <option>Financeiro e custos operacionais</option>
+                                <option>T.I., suporte ou segurança</option>
+                                <option>Gestão geral e processos</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-bold text-viBlue">O que você quer organizar primeiro?</label>
+                            <textarea id="message" name="message" rows="5" required class="mt-2 w-full rounded border border-slate-300 px-4 py-3 outline-none transition focus:border-viGold focus:ring-2 focus:ring-viGold/20" placeholder="Exemplo: minha escala muda toda semana, meus custos não fecham, minhas campanhas demoram para aprovar..."></textarea>
+                        </div>
+
+                        <button id="contactSubmit" type="submit" class="w-full rounded bg-viBlue px-6 py-4 font-black text-white shadow-lg transition hover:bg-viGold">
+                            Solicitar diagnóstico
+                        </button>
+                        <p id="contactStatus" class="hidden rounded p-4 text-sm font-bold"></p>
+                    </form>
                 </div>
-                <button type="submit" class="w-full bg-viBlue text-white font-bold py-4 rounded hover:bg-viGold transition shadow-lg">
-                    Solicitar Diagnóstico
-                </button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <section class="py-14">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-5 md:grid-cols-3">
+                    <div class="border border-slate-200 bg-white p-6">
+                        <p class="text-sm font-black uppercase text-slate-400">1. Recebimento</p>
+                        <p class="mt-2 font-black text-viBlue">A V.I. entende o cenário e registra o lead.</p>
+                    </div>
+                    <div class="border border-slate-200 bg-white p-6">
+                        <p class="text-sm font-black uppercase text-slate-400">2. Conversa</p>
+                        <p class="mt-2 font-black text-viBlue">A primeira reunião separa urgência de prioridade.</p>
+                    </div>
+                    <div class="border border-slate-200 bg-white p-6">
+                        <p class="text-sm font-black uppercase text-slate-400">3. Plano</p>
+                        <p class="mt-2 font-black text-viBlue">Você recebe o primeiro caminho de execução.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
